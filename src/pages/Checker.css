@@ -1,0 +1,142 @@
+/* Shared Checker Page Styles */
+
+.checker {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.checker__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  margin-bottom: var(--space-6);
+  transition: color var(--transition-fast);
+}
+
+.checker__back:hover {
+  color: var(--color-accent);
+}
+
+.checker__card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-sm);
+}
+
+.checker__icon-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.checker__icon-circle {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.checker__heading {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.checker__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.checker__optional-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.checker__submit-row {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  margin-top: var(--space-2);
+}
+
+.checker__submit-row .btn {
+  flex-shrink: 0;
+}
+
+.checker__clear {
+  background: none;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast);
+}
+
+.checker__clear:hover {
+  color: var(--color-text);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 0.8s linear infinite;
+}
+
+.checker__loading-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-10);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-top: var(--space-8);
+  font-size: var(--font-size-base);
+}
+
+@media (max-width: 768px) {
+  .checker {
+    padding: 0 var(--space-4);
+  }
+
+  .checker__card {
+    padding: var(--space-5);
+  }
+
+  .checker__optional-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .checker__submit-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .checker__submit-row .btn {
+    width: 100%;
+  }
+
+  .checker__clear {
+    text-align: center;
+  }
+}

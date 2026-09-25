@@ -1,0 +1,45 @@
+.practice-hero__icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+  margin: 0 auto var(--space-6);
+}
+
+.practice-category-card {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.practice-category-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.practice-category-card__count {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.practice-category-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  transition: gap var(--transition-fast);
+}
+
+.card--interactive:hover .practice-category-card__cta {
+  gap: var(--space-2);
+}

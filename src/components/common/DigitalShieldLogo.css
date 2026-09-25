@@ -1,0 +1,38 @@
+.digitalshield-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  user-select: none;
+}
+
+.digitalshield-logo-mark {
+  flex-shrink: 0;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(13, 148, 136, 0.25));
+  transition: transform var(--transition-fast);
+}
+
+.digitalshield-logo:hover .digitalshield-logo-mark {
+  transform: scale(1.05);
+}
+
+.digitalshield-logo__wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-size: var(--font-size-xl);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.digitalshield-logo__text-main {
+  font-weight: 700;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.digitalshield-logo__text-accent {
+  font-weight: 800;
+  color: var(--color-accent);
+  margin-left: 1px;
+}

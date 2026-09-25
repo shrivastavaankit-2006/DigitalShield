@@ -1,0 +1,32 @@
+.learn-hero__icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  background: rgba(14, 165, 233, 0.1);
+  color: #0ea5e9;
+  margin: 0 auto var(--space-6);
+}
+
+.learn-topic-card {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.learn-topic-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  transition: gap var(--transition-fast);
+}
+
+.card--interactive:hover .learn-topic-card__cta {
+  gap: var(--space-3);
+}
