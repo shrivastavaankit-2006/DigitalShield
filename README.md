@@ -11,6 +11,12 @@ DigitalShield is an educational web platform and progressive web application (PW
 
 ---
 
+## Live Website
+
+[Visit DigitalShield](https://digitalshield.pages.dev)
+
+---
+
 ## Table of Contents
 
 1. [Project Overview & Purpose](#1-project-overview--purpose)
@@ -170,26 +176,26 @@ The News Verification pipeline relies on **real-time external web evidence retri
 
 ```mermaid
 flowchart TD
-    A[User Inputs Claim or Uploads Screenshot] --> B{Screenshot Attached?}
-    B -- Yes --> C[Gemini Vision Content Inspection]
-    C --> D{Is Ordinary Photo?}
-    D -- Yes --> E[Classify: Personal Photograph\nRelevance: Not relevant\nRisk: LOW RISK (0)\nStatus: INSUFFICIENT EVIDENCE]
-    D -- No --> F[Extract Core Headline & Claim]
-    B -- No --> G[Raw Text Claim]
-    F --> H[Claim Understanding & Normalization]
+    A["User Inputs Claim or Uploads Screenshot"] --> B{"Screenshot Attached?"}
+    B -->|Yes| C["Gemini Vision Content Inspection"]
+    C --> D{"Is Ordinary Photo?"}
+    D -->|Yes| E["Classify: Personal Photograph<br/>Relevance: Not relevant<br/>Risk: LOW RISK (0)<br/>Status: INSUFFICIENT EVIDENCE"]
+    D -->|No| F["Extract Core Headline & Claim"]
+    B -->|No| G["Raw Text Claim"]
+    F --> H["Claim Understanding & Normalization"]
     G --> H
-    H --> I[Normalize Grammar & Hinglish\nGenerate 3-5 Search Queries]
-    I --> J[Free Multi-Source Web & News Retrieval]
-    J --> K1[Bing News RSS\nReal-time Breaking News]
-    J --> K2[Wikipedia Search API\nAuthoritative Facts]
-    K1 --> L[Deduplication & Authority Scoring]
+    H --> I["Normalize Grammar & Hinglish<br/>Generate 3-5 Search Queries"]
+    I --> J["Free Multi-Source Web & News Retrieval"]
+    J --> K1["Bing News RSS<br/>Real-time Breaking News"]
+    J --> K2["Wikipedia Search API<br/>Authoritative Facts"]
+    K1 --> L["Deduplication & Authority Scoring"]
     K2 --> L
-    L --> M{Sources Found?}
-    M -- No --> N[Status: NEEDS VERIFICATION\nRisk: NEEDS VERIFICATION (40)\nExplanation: No external corroboration found]
-    M -- Yes --> O[Rank Top 10 Evidence Sources]
-    O --> P[Gemini Evidence-Only Evaluation\nTemperature: 0.1, Schema Enforced]
-    P --> Q[Verification Status & Risk Assessment]
-    Q --> R[Display Result Card with Clickable Source Links]
+    L --> M{"Sources Found?"}
+    M -->|No| N["Status: NEEDS VERIFICATION<br/>Risk: NEEDS VERIFICATION (40)<br/>Explanation: No external corroboration found"]
+    M -->|Yes| O["Rank Top 10 Evidence Sources"]
+    O --> P["Gemini Evidence-Only Evaluation<br/>Temperature: 0.1, Schema Enforced"]
+    P --> Q["Verification Status & Risk Assessment"]
+    Q --> R["Display Result Card with Clickable Source Links"]
 ```
 
 ### Verification Status Reference
